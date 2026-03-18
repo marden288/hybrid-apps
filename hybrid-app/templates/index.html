@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hybrid Wind-Solar • 1.2 kW Anti-theft Station</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased transition-colors duration-300">
+
+<!-- ═══════════════════════ NAVIGATION ═══════════════════════ -->
+<nav class="sticky top-0 z-30 backdrop-blur-sm bg-white/90 dark:bg-slate-900/90 border-b border-green-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
+
+    <span class="text-lg font-bold text-green-700">
+      <i class="fas fa-bolt me-2 text-yellow-500"></i>HYBRID 1.2kW
+    </span>
+
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+      <a href="#home"       class="hover:text-green-600 transition-colors">Home</a>
+      <a href="#components" class="hover:text-green-600 transition-colors">Components</a>
+      <a href="#specs"      class="hover:text-green-600 transition-colors">Specs</a>
+      <a href="#videos"     class="hover:text-green-600 transition-colors">Videos</a>
+      <a href="#team"       class="hover:text-green-600 transition-colors">Team</a>
+      <a href="#contact"    class="hover:text-green-600 transition-colors">Contact</a>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <!-- User badge -->
+      <span id="userBadge"
+        class="hidden text-xs bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200
+               px-3 py-1 rounded-full font-medium border border-green-300"></span>
+
+      <!-- Dark mode toggle -->
+      <button id="darkToggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun hidden text-yellow-300"></i>
+      </button>
+
+      <!-- Auth button -->
+      <button id="authNavBtn" onclick="Auth.showModal('login')"
+        class="bg-gray-800 text-white px-4 py-2 rounded-lg text-sm hover:bg-gray-700 transition-colors">
+        <i class="fas fa-user me-2"></i>Login
+      </button>
+    </div>
+
+  </div>
+</nav>
+
+<!-- ═══════════════════════ MAIN ═══════════════════════ -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+  <!-- ── HERO ── -->
+  <section id="home" class="hero-bg rounded-b-3xl shadow-2xl mt-2 mb-12">
+    <div class="bg-gradient-to-r from-green-900/70 to-blue-900/60 rounded-b-3xl py-20 md:py-28 px-6">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-6xl font-black leading-tight">
+          <span class="ph-flag-stripe">1.2 kW</span><br>
+          <span class="text-white">HYBRID WIND-SOLAR CHARGING STATION</span>
+        </h1>
+        <p class="text-white text-xl mt-4">with ANTI-THEFT SYSTEM</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="bg-[#00C853] text-white px-4 py-2 rounded-full text-sm">⚡ 600W Solar + 600W Wind</span>
+          <span class="bg-[#0288D1] text-white px-4 py-2 rounded-full text-sm">🔒 Arduino Anti-theft</span>
+          <span class="bg-yellow-500 text-white px-4 py-2 rounded-full text-sm">🤖 AI Assistant</span>
+          <span class="bg-purple-600 text-white px-4 py-2 rounded-full text-sm">🗄️ MongoDB Backend</span>
+        </div>
+        <p class="text-green-300 mt-6 text-sm">
+          <i class="fas fa-map-marker-alt me-2"></i>Baliuag University, Baliuag, Bulacan • 2026
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COMPONENTS ── -->
+  <section id="components" class="my-16">
+    <h2 class="text-3xl font-bold text-[#00C853] mb-8">
+      <i class="fas fa-microchip me-3"></i>System Components
+    </h2>
+    <div class="grid md:grid-cols-4 gap-4">
+      <div class="component-card bg-white text-center">
+        <i class="fas fa-microchip text-4xl text-blue-600 mb-2"></i>
+        <h3 class="font-bold">Arduino Nano</h3>
+        <p class="text-sm text-gray-600">ATmega328P, 16MHz</p>
+      </div>
+      <div class="component-card bg-white text-center">
+        <i class="fas fa-display text-4xl text-green-600 mb-2"></i>
+        <h3 class="font-bold">16x2 LCD</h3>
+        <p class="text-sm text-gray-600">I2C, Blue backlight</p>
+      </div>
+      <div class="component-card bg-white text-center">
+        <i class="fas fa-keyboard text-4xl text-yellow-600 mb-2"></i>
+        <h3 class="font-bold">4x4 Keypad</h3>
+        <p class="text-sm text-gray-600">Membrane, 16 keys</p>
+      </div>
+      <div class="component-card bg-white text-center">
+        <i class="fas fa-lock text-4xl text-red-600 mb-2"></i>
+        <h3 class="font-bold">Solenoid Lock</h3>
+        <p class="text-sm text-gray-600">12V, 10kg holding</p>
+      </div>
+      <div class="component-card bg-white text-center">
+        <i class="fas fa-toggle-on text-4xl text-purple-600 mb-2"></i>
+        <h3 class="font-bold">4-Ch Relay</h3>
+        <p class="text-sm text-gray-600">5V, 10A rating</p>
+      </div>
+      <div class="component-card bg-white text-center">
+        <i class="fas fa-bolt text-4xl text-orange-600 mb-2"></i>
+        <h3 class="font-bold">LM2596 Buck</h3>
+        <p class="text-sm text-gray-600">5V @ 3A output</p>
+      </div>
+      <div class="component-card bg-white text-center">
+        <i class="fas fa-sim-card text-4xl text-indigo-600 mb-2"></i>
+        <h3 class="font-bold">SIM800L GSM</h3>
+        <p class="text-sm text-gray-600">SMS alerts</p>
+      </div>
+      <div class="component-card bg-white text-center">
+        <i class="fas fa-solar-panel text-4xl text-yellow-600 mb-2"></i>
+        <h3 class="font-bold">600W Solar</h3>
+        <p class="text-sm text-gray-600">Polycrystalline</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SPECS ── -->
+  <section id="specs" class="my-16">
+    <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-lg">
+      <h2 class="text-3xl font-bold text-[#0288D1] mb-6">
+        <i class="fas fa-list-check me-3"></i>Technical Specifications
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="font-bold text-green-600 mb-3">⚡ Power System</h3>
+          <ul class="space-y-2 text-sm">
+            <li><span class="font-semibold">Total Power:</span> 1.2 kW (600W Solar + 600W Wind)</li>
+            <li><span class="font-semibold">Battery:</span> 12V 200Ah Deep Cycle (×2)</li>
+            <li><span class="font-semibold">Charge Controller:</span> MPPT 60A + PWM 30A</li>
+            <li><span class="font-semibold">Inverter:</span> 1500W Pure Sine Wave</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold text-green-600 mb-3">🔒 Security System</h3>
+          <ul class="space-y-2 text-sm">
+            <li><span class="font-semibold">Authentication:</span> 4-digit PIN via keypad</li>
+            <li><span class="font-semibold">Alerts:</span> SMS via SIM800L GSM</li>
+            <li><span class="font-semibold">Lock:</span> 12V Solenoid, 10kg force</li>
+            <li><span class="font-semibold">Enclosure:</span> Tamper-proof steel</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold text-green-600 mb-3">🔌 Charging Ports</h3>
+          <ul class="space-y-2 text-sm">
+            <li><span class="font-semibold">USB-A:</span> 4 ports × 5V / 2.4A</li>
+            <li><span class="font-semibold">USB-C PD:</span> 2 ports × 65W</li>
+            <li><span class="font-semibold">DC:</span> 12V outlet</li>
+            <li><span class="font-semibold">AC:</span> 220V via inverter</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold text-green-600 mb-3">🤖 Controller</h3>
+          <ul class="space-y-2 text-sm">
+            <li><span class="font-semibold">MCU:</span> Arduino Nano (ATmega328P)</li>
+            <li><span class="font-semibold">Display:</span> 16×2 LCD with I2C</li>
+            <li><span class="font-semibold">Input:</span> 4×4 Matrix Keypad</li>
+            <li><span class="font-semibold">Communication:</span> GSM (SIM800L)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VIDEOS ── -->
+  <section id="videos" class="my-16">
+    <h2 class="text-3xl font-bold text-[#00C853] mb-8">
+      <i class="fas fa-video me-3"></i>Project Videos
+    </h2>
+
+    <!-- Admin Upload Panel (visible when logged in as admin) -->
+    <div id="adminVideoPanel" class="hidden bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-xl mb-8 border-2 border-green-200">
+      <div class="flex justify-between items-center mb-5">
+        <h3 class="text-2xl font-bold text-green-600">
+          <i class="fas fa-cloud-upload-alt me-2"></i>Upload Video
+        </h3>
+        <button onclick="Auth.logout()"
+          class="text-sm text-red-500 hover:text-red-700 border border-red-300 px-3 py-1 rounded-lg transition-colors">
+          <i class="fas fa-sign-out-alt me-1"></i>Logout Admin
+        </button>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="mb-4">
+            <label class="block text-sm font-medium mb-1">Video Title <span class="text-red-500">*</span></label>
+            <input type="text" id="videoTitle" placeholder="e.g., Frame Assembly Day 1"
+              class="w-full p-3 border rounded-lg focus:outline-none focus:border-green-500 dark:bg-slate-700 dark:border-slate-600">
+          </div>
+          <div class="mb-4">
+            <label class="block text-sm font-medium mb-1">Description</label>
+            <textarea id="videoDesc" rows="3" placeholder="What's happening in this video?"
+              class="w-full p-3 border rounded-lg focus:outline-none focus:border-green-500 dark:bg-slate-700 dark:border-slate-600"></textarea>
+          </div>
+          <div class="mb-4">
+            <label class="block text-sm font-medium mb-1">Category</label>
+            <select id="videoCategory"
+              class="w-full p-3 border rounded-lg focus:outline-none focus:border-green-500 dark:bg-slate-700 dark:border-slate-600">
+              <option value="assembly">Assembly & Construction</option>
+              <option value="electronics">Electronics & Programming</option>
+              <option value="security">Security System</option>
+              <option value="testing">Testing & Demo</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="mb-4">
+            <label class="block text-sm font-medium mb-1">Uploaded By</label>
+            <select id="videoUploader"
+              class="w-full p-3 border rounded-lg focus:outline-none focus:border-green-500 dark:bg-slate-700 dark:border-slate-600">
+              <option value="Marden">Marden (Lead Engineer)</option>
+              <option value="Rhey Victor">Rhey Victor (Systems Designer)</option>
+              <option value="Victor">Victor (Security Specialist)</option>
+              <option value="Team">Team Project</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Video File <span class="text-red-500">*</span></label>
+          <div class="upload-area p-8 text-center mb-4" onclick="document.getElementById('videoFile').click()">
+            <i class="fas fa-cloud-upload-alt text-5xl text-gray-400 mb-3"></i>
+            <p class="text-gray-600">Click to select or drag & drop</p>
+            <p class="text-xs text-gray-400 mt-2">MP4, WebM, MOV — max 200MB</p>
+            <input type="file" id="videoFile" accept="video/*" class="hidden" onchange="previewVideo(this)">
+          </div>
+          <div id="videoPreview" class="hidden mb-4">
+            <p class="text-sm font-medium mb-2">Preview:</p>
+            <video id="previewPlayer" controls class="w-full rounded-lg max-h-48"></video>
+          </div>
+          <button onclick="uploadVideo()"
+            class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 w-full transition-colors font-medium">
+            <i class="fas fa-upload me-2"></i>Publish Video
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Login prompt for non-admins -->
+    <div id="uploadLoginPrompt" class="hidden bg-blue-50 dark:bg-slate-800 border border-blue-200 rounded-2xl p-4 mb-6 text-center">
+      <p class="text-blue-700 dark:text-blue-300 text-sm">
+        <i class="fas fa-info-circle me-2"></i>
+        Want to upload videos?
+        <button onclick="Auth.showModal('login')" class="underline font-semibold hover:text-blue-900 ml-1">Login as Admin</button>
+      </p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="mb-6 flex flex-wrap gap-2">
+      <button onclick="filterVideos('all', this)"         class="filter-btn bg-green-600 text-white px-4 py-2 rounded-lg text-sm">All</button>
+      <button onclick="filterVideos('assembly', this)"    class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm">Assembly</button>
+      <button onclick="filterVideos('electronics', this)" class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm">Electronics</button>
+      <button onclick="filterVideos('security', this)"    class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm">Security</button>
+      <button onclick="filterVideos('testing', this)"     class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg text-sm">Testing</button>
+    </div>
+
+    <!-- Video Gallery -->
+    <div id="videoGallery" class="video-grid"></div>
+  </section>
+
+  <!-- ── TEAM ── -->
+  <section id="team" class="my-16">
+    <h2 class="text-3xl font-bold text-[#00C853] mb-8">
+      <i class="fas fa-users me-3"></i>Project Team
+    </h2>
+    <div class="grid md:grid-cols-4 gap-6">
+      <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-lg text-center hover:shadow-xl transition-shadow">
+        <i class="fas fa-user-graduate text-5xl text-green-600 mb-3"></i>
+        <h3 class="text-xl font-bold">Marden</h3>
+        <p class="text-blue-600 text-sm">Lead Engineer</p>
+        <p class="text-gray-400 text-xs mt-1">+63 912 345 6789</p>
+      </div>
+      <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-lg text-center hover:shadow-xl transition-shadow">
+        <i class="fas fa-user-cog text-5xl text-blue-600 mb-3"></i>
+        <h3 class="text-xl font-bold">Rhey Victor Guillermo</h3>
+        <p class="text-blue-600 text-sm">Systems Designer</p>
+        <p class="text-gray-400 text-xs mt-1">+63 923 456 7890</p>
+      </div>
+      <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-lg text-center hover:shadow-xl transition-shadow">
+        <i class="fas fa-user-shield text-5xl text-yellow-600 mb-3"></i>
+        <h3 class="text-xl font-bold">Victor Guillermo</h3>
+        <p class="text-blue-600 text-sm">Security Specialist</p>
+        <p class="text-gray-400 text-xs mt-1">+63 934 567 8901</p>
+      </div>
+      <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-lg text-center border-2 border-yellow-400 hover:shadow-xl transition-shadow">
+        <i class="fas fa-chalkboard-teacher text-5xl text-purple-600 mb-3"></i>
+        <h3 class="text-xl font-bold">Ma'am Jennifer Del Amen</h3>
+        <p class="text-blue-600 text-sm">Project Adviser</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact" class="my-16">
+    <h2 class="text-3xl font-bold text-[#00C853] mb-8">
+      <i class="fas fa-envelope me-3"></i>Contact Us
+    </h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-lg">
+        <h3 class="text-2xl font-semibold mb-6">Send a Message</h3>
+        <input type="text"  id="contactName"    placeholder="Your Name *"
+          class="w-full p-3 border rounded-lg mb-3 focus:outline-none focus:border-green-500 dark:bg-slate-700 dark:border-slate-600">
+        <input type="email" id="contactEmail"   placeholder="Your Email *"
+          class="w-full p-3 border rounded-lg mb-3 focus:outline-none focus:border-green-500 dark:bg-slate-700 dark:border-slate-600">
+        <input type="text"  id="contactSubject" placeholder="Subject *"
+          class="w-full p-3 border rounded-lg mb-3 focus:outline-none focus:border-green-500 dark:bg-slate-700 dark:border-slate-600">
+        <textarea id="contactMessage" rows="4" placeholder="Your Message *"
+          class="w-full p-3 border rounded-lg mb-4 focus:outline-none focus:border-green-500 dark:bg-slate-700 dark:border-slate-600"></textarea>
+        <button id="contactSendBtn" onclick="sendContactMessage()"
+          class="bg-gradient-to-r from-green-500 to-blue-500 text-white px-6 py-3 rounded-lg w-full hover:opacity-90 transition-opacity font-medium">
+          <i class="fas fa-paper-plane me-2"></i>Send Message
+        </button>
+      </div>
+
+      <div class="space-y-4">
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg">
+          <h4 class="font-bold mb-3 text-lg">📞 Contact Numbers</h4>
+          <p class="mb-2"><i class="fas fa-phone text-green-600 me-2"></i>Marden: +63 912 345 6789</p>
+          <p class="mb-2"><i class="fas fa-phone text-green-600 me-2"></i>Rhey: +63 923 456 7890</p>
+          <p><i class="fas fa-phone text-green-600 me-2"></i>Victor: +63 934 567 8901</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg">
+          <h4 class="font-bold mb-3 text-lg">✉️ Email Addresses</h4>
+          <p class="mb-2"><i class="fas fa-envelope text-blue-600 me-2"></i>marden@hybrid.edu</p>
+          <p class="mb-2"><i class="fas fa-envelope text-blue-600 me-2"></i>rhey@hybrid.edu</p>
+          <p class="mb-2"><i class="fas fa-envelope text-blue-600 me-2"></i>victor@hybrid.edu</p>
+          <p><i class="fas fa-envelope text-blue-600 me-2"></i>jdelamen@hybrid.edu</p>
+        </div>
+        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg">
+          <h4 class="font-bold mb-3 text-lg">📍 Location</h4>
+          <p class="text-gray-600 dark:text-gray-400">
+            <i class="fas fa-map-marker-alt text-red-500 me-2"></i>
+            Baliuag University, Baliuag, Bulacan
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="my-10 pb-6 border-t pt-8 text-center">
+    <p class="font-bold text-lg">Marden &bull; Rhey Victor Guillermo &bull; Victor Guillermo</p>
+    <p class="text-sm text-gray-500 mt-1">Adviser: Ma'am Jennifer Del Amen &bull; Baliuag University &bull; 2026</p>
+    <p class="text-xs text-gray-400 mt-1">Powered by Flask + MongoDB</p>
+  </footer>
+</main>
+
+<!-- ═══════════════════ CHATBOT ═══════════════════ -->
+<div class="chatbot-container">
+  <div class="chatbot-button" onclick="toggleChat()" title="AI Project Assistant">
+    <i class="fas fa-robot text-2xl"></i>
+  </div>
+  <div class="chatbot-window" id="chatWindow">
+    <div class="chat-header">
+      <span><i class="fas fa-robot me-2"></i>AI Project Assistant</span>
+      <button onclick="toggleChat()" class="text-white hover:text-gray-200">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div id="apiKeyBanner" class="api-key-banner" style="display:none;"></div>
+    <div id="apiKeyRow" class="api-key-input-row" style="display:none;">
+      <input type="password" id="apiKeyInput" placeholder="Paste Gemini API key here…">
+      <button onclick="saveApiKey()">Save</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-message">
+        <div class="bot-message">
+          👋 Hello! I'm your AI project assistant.<br><br>
+          <strong>Ask me about:</strong><br>
+          • Components &amp; specifications<br>
+          • Security features<br>
+          • Team members<br>
+          • Technical details<br><br>
+          How can I help you?
+        </div>
+      </div>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" id="chatInput" class="chat-input" placeholder="Ask me anything…"
+        onkeypress="if(event.key==='Enter') sendChatMessage()">
+      <button class="chat-send" onclick="sendChatMessage()">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ AUTH MODAL ═══════════════════ -->
+<div id="authModal" class="hidden fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4">
+  <div class="bg-white dark:bg-slate-800 rounded-2xl w-full max-w-md shadow-2xl overflow-hidden">
+
+    <!-- Tabs -->
+    <div class="flex border-b dark:border-slate-700">
+      <button id="tabLogin"
+        onclick="switchTab('login')"
+        class="flex-1 py-4 text-sm font-semibold border-b-2 border-green-500 text-green-600 transition-colors">
+        <i class="fas fa-sign-in-alt me-2"></i>Login
+      </button>
+      <button id="tabRegister"
+        onclick="switchTab('register')"
+        class="flex-1 py-4 text-sm font-semibold text-gray-500 hover:text-gray-700 transition-colors">
+        <i class="fas fa-user-plus me-2"></i>Register
+      </button>
+    </div>
+
+    <!-- Login Pane -->
+    <div id="loginPane" class="p-8">
+      <h3 class="text-2xl font-bold mb-1">Welcome back!</h3>
+      <p class="text-gray-500 text-sm mb-6">Sign in to your account.</p>
+
+      <div id="loginError" class="hidden bg-red-50 border border-red-300 text-red-700 px-4 py-3 rounded-lg mb-4 text-sm"></div>
+
+      <div class="mb-4">
+        <label class="block text-sm font-medium mb-1">Email</label>
+        <input type="email" id="loginEmail" placeholder="you@example.com"
+          class="w-full p-3 border rounded-lg focus:outline-none focus:border-green-500 dark:bg-slate-700 dark:border-slate-600">
+      </div>
+      <div class="mb-6">
+        <label class="block text-sm font-medium mb-1">Password</label>
+        <div class="relative">
+          <input type="password" id="loginPassword" placeholder="••••••••"
+            class="w-full p-3 border rounded-lg focus:outline-none focus:border-green-500 dark:bg-slate-700 dark:border-slate-600 pr-10">
+          <button type="button" onclick="togglePasswordVisibility('loginPassword', this)"
+            class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+            <i class="fas fa-eye text-sm"></i>
+          </button>
+        </div>
+      </div>
+
+      <button id="loginBtn" onclick="submitLogin()"
+        class="w-full bg-gradient-to-r from-green-500 to-blue-500 text-white py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+        <i class="fas fa-sign-in-alt me-2"></i>Login
+      </button>
+
+      <p class="text-center text-sm text-gray-500 mt-4">
+        No account?
+        <button onclick="switchTab('register')" class="text-green-600 font-semibold hover:underline">Register here</button>
+      </p>
+    </div>
+
+    <!-- Register Pane -->
+    <div id="registerPane" class="p-8 hidden">
+      <h3 class="text-2xl font-bold mb-1">Create account</h3>
+      <p class="text-gray-500 text-sm mb-6">Join the Hybrid Project team.</p>
+
+      <div id="registerError" class="hidden bg-red-50 border border-red-300 text-red-700 px-4 py-3 rounded-lg mb-4 text-sm"></div>
+
+      <div class="mb-3">
+        <label class="block text-sm font-medium mb-1">Full Name <span class="text-red-500">*</span></label>
+        <input type="text" id="regName" placeholder="e.g., Marden Cruz"
+          class="w-full p-3 border rounded-lg focus:outline-none focus:border-green-500 dark:bg-slate-700 dark:border-slate-600">
+      </div>
+      <div class="mb-3">
+        <label class="block text-sm font-medium mb-1">Email <span class="text-red-500">*</span></label>
+        <input type="email" id="regEmail" placeholder="you@example.com"
+          class="w-full p-3 border rounded-lg focus:outline-none focus:border-green-500 dark:bg-slate-700 dark:border-slate-600">
+      </div>
+      <div class="mb-3">
+        <label class="block text-sm font-medium mb-1">Password <span class="text-red-500">*</span></label>
+        <div class="relative">
+          <input type="password" id="regPassword" placeholder="Min. 6 characters"
+            class="w-full p-3 border rounded-lg focus:outline-none focus:border-green-500 dark:bg-slate-700 dark:border-slate-600 pr-10">
+          <button type="button" onclick="togglePasswordVisibility('regPassword', this)"
+            class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+            <i class="fas fa-eye text-sm"></i>
+          </button>
+        </div>
+      </div>
+      <div class="mb-6">
+        <label class="block text-sm font-medium mb-1">
+          Admin Code
+          <span class="text-xs text-gray-400 font-normal ml-1">(leave blank for regular account)</span>
+        </label>
+        <input type="password" id="regAdminCode" placeholder="Enter admin code for admin access"
+          class="w-full p-3 border rounded-lg focus:outline-none focus:border-green-500 dark:bg-slate-700 dark:border-slate-600">
+      </div>
+
+      <button id="registerBtn" onclick="submitRegister()"
+        class="w-full bg-gradient-to-r from-green-500 to-blue-500 text-white py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+        <i class="fas fa-user-plus me-2"></i>Create Account
+      </button>
+
+      <p class="text-center text-sm text-gray-500 mt-4">
+        Already have an account?
+        <button onclick="switchTab('login')" class="text-green-600 font-semibold hover:underline">Login</button>
+      </p>
+    </div>
+
+    <!-- Close button -->
+    <button onclick="Auth.hideModal()"
+      class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-xl">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+</div>
+
+<!-- ═══════════════════ SCRIPTS ═══════════════════ -->
+<script src="/static/js/config.js"></script>
+<script src="/static/js/api.js"></script>
+<script src="/static/js/auth.js"></script>
+<script src="/static/js/chatbot.js"></script>
+<script src="/static/js/videos.js"></script>
+<script src="/static/js/contact.js"></script>
+<script src="/static/js/main.js"></script>
+
+<script>
+  // Password visibility toggle (inline since it's tiny)
+  function togglePasswordVisibility(inputId, btn) {
+    const input = document.getElementById(inputId);
+    const icon  = btn.querySelector('i');
+    if (input.type === 'password') {
+      input.type = 'text';
+      icon.classList.replace('fa-eye', 'fa-eye-slash');
+    } else {
+      input.type = 'password';
+      icon.classList.replace('fa-eye-slash', 'fa-eye');
+    }
+  }
+
+  // Show upload login prompt for non-admins
+  document.addEventListener('DOMContentLoaded', () => {
+    const prompt = document.getElementById('uploadLoginPrompt');
+    if (prompt && !Auth.isAdmin()) prompt.classList.remove('hidden');
+  });
+</script>
+
+</body>
+</html>
